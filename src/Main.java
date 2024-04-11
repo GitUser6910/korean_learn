@@ -116,8 +116,8 @@ public class Main {
                     switch (quiz) {
                         case 1:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (String s : fruitsArr) {
-                                System.out.print(s);
+                            for (int i = 0; i < fruitsArr.length; i++) {
+                                System.out.print(fruitsArr[i]);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
@@ -156,8 +156,8 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (String s : vegetablesArr) {
-                                System.out.print(s);
+                            for (int i = 0; i < vegetablesArr.length; i++) {
+                                System.out.print(vegetablesArr[i]);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
@@ -205,16 +205,16 @@ public class Main {
                     switch (quizWrite) {
                         case 1:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (String s : fruitsArr) {
-                                System.out.print(s);
+                            for (int i = 0; i < fruitsArr.length; i++) {
+                                System.out.print(fruitsArr[i]);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
                             System.out.println("А теперь письменное закрепление материала. Удачи!");
                             // scanner.close();
-                            for (String s : fruitsArr) {
-                                String[] pair = s.split(" - ");
+                            for (int i = 0; i < fruitsArr.length; i++) {
+                                String[] pair = fruitsArr[i].split(" - ");
                                 String koreanWord = pair[0];
                                 String russianWord = pair[1];
                                 System.out.print(russianWord + " - ");
@@ -229,16 +229,16 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (String s : vegetablesArr) {
-                                System.out.print(s);
+                            for (int i = 0; i < vegetablesArr.length; i++) {
+                                System.out.print(vegetablesArr[i]);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
                             System.out.println("А теперь письменное закрепление материала. Удачи!");
                             // scanner.close();
-                            for (String s : vegetablesArr) {
-                                String[] pair = s.split(" - ");
+                            for (int i = 0; i < vegetablesArr.length; i++) {
+                                String[] pair = vegetablesArr[i].split(" - ");
                                 String koreanWord = pair[0];
                                 String russianWord = pair[1];
                                 System.out.print(russianWord + " - ");
