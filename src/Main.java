@@ -1,11 +1,9 @@
-import java.io.IOException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
-        boolean isStopped = false;
         String[] fruitsArr = {
                 "사과 - яблоко",
                 "배 - груша",
@@ -118,8 +116,8 @@ public class Main {
                     switch (quiz) {
                         case 1:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (int i = 0; i < fruitsArr.length; i++) {
-                                System.out.print(fruitsArr[i]);
+                            for (String s : fruitsArr) {
+                                System.out.print(s);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
@@ -158,8 +156,8 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (int i = 0; i < vegetablesArr.length; i++) {
-                                System.out.print(vegetablesArr[i]);
+                            for (String s : vegetablesArr) {
+                                System.out.print(s);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
@@ -207,16 +205,16 @@ public class Main {
                     switch (quizWrite) {
                         case 1:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (int i = 0; i < fruitsArr.length; i++) {
-                                System.out.print(fruitsArr[i]);
+                            for (String s : fruitsArr) {
+                                System.out.print(s);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
                             System.out.println("А теперь письменное закрепление материала. Удачи!");
                             // scanner.close();
-                            for (int i = 0; i < fruitsArr.length; i++) {
-                                String[] pair = fruitsArr[i].split(" - ");
+                            for (String s : fruitsArr) {
+                                String[] pair = s.split(" - ");
                                 String koreanWord = pair[0];
                                 String russianWord = pair[1];
                                 System.out.print(russianWord + " - ");
@@ -231,16 +229,16 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("Нажимайте 'Enter' после каждого слова если вы его запомнили");
-                            for (int i = 0; i < vegetablesArr.length; i++) {
-                                System.out.print(vegetablesArr[i]);
+                            for (String s : vegetablesArr) {
+                                System.out.print(s);
                                 scanner.nextLine();
                             }
                             System.out.print("\033[H\033[2J");
                             System.out.flush();
                             System.out.println("А теперь письменное закрепление материала. Удачи!");
                             // scanner.close();
-                            for (int i = 0; i < vegetablesArr.length; i++) {
-                                String[] pair = vegetablesArr[i].split(" - ");
+                            for (String s : vegetablesArr) {
+                                String[] pair = s.split(" - ");
                                 String koreanWord = pair[0];
                                 String russianWord = pair[1];
                                 System.out.print(russianWord + " - ");
@@ -266,12 +264,4 @@ public class Main {
         // scanner.nextLine();
     }
 
-    private static void clearScreen() throws IOException, InterruptedException {
-        if (System.getProperty("os.name").contains("Windows")) {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } else {
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-        }
-    }
 }
