@@ -144,13 +144,28 @@ public class Main {
                                 for (int i = 0; i < fruitsOptions.size(); i++) {
                                     System.out.println((i + 1) + " - " + fruitsOptions.get(i));
                                 }
-                                System.out.print("Ваш ответ: ");
-                                int answer = scanner.nextInt();
-                                scanner.nextLine();
-                                if (fruitsOptions.get(answer - 1).equals(fruitsArr[j].split(" - ")[0])) {
-                                    System.out.println("Правильно\n");
-                                } else {
-                                    System.err.println("Ошибка\n");
+                                boolean fruitQuizCorrect = false;
+                                while (!fruitQuizCorrect) {
+                                    System.out.print("Ваш ответ: ");
+                                    if (scanner.hasNextInt()) {
+                                        int answer = scanner.nextInt();
+                                        scanner.nextLine();
+                                        if (answer >= 1 && answer <= fruitsOptions.size()) {
+                                            if (fruitsOptions.get(answer - 1).equals(fruitsArr[j].split(" - ")[0])) {
+                                                System.out.println("Правильно\n");
+                                                fruitQuizCorrect = true;
+                                                break;
+                                            } else {
+                                                System.out.println("Ошибка. Попробуйте еще раз");
+                                            }
+                                        } else {
+                                            System.out.println("Некорректный ввод. Введите число от 1 до " + fruitsOptions.size());
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Некорректный ввод. Введите число от 1 до " + fruitsOptions.size());
+                                        scanner.next();
+                                    }
                                 }
                             }
                             break;
@@ -184,13 +199,27 @@ public class Main {
                                 for (int i = 0; i < VegetablesOptions.size(); i++) {
                                     System.out.println((i + 1) + " - " + VegetablesOptions.get(i));
                                 }
-                                System.out.print("Ваш ответ: ");
-                                int answer = scanner.nextInt();
-                                scanner.nextLine();
-                                if (VegetablesOptions.get(answer - 1).equals(vegetablesArr[j].split(" - ")[0])) {
-                                    System.out.println("Правильно\n");
-                                } else {
-                                    System.err.println("Ошибка\n");
+                                boolean vegetableQuizCorrect = false;
+                                while (!vegetableQuizCorrect) {
+                                    System.out.print("Ваш ответ: ");
+                                    if (scanner.hasNextInt()) {
+                                        int answer = scanner.nextInt();
+                                        scanner.nextLine();
+                                        if (answer >= 1 && answer <= VegetablesOptions.size()) {
+                                            if (VegetablesOptions.get(answer - 1).equals(vegetablesArr[j].split(" - ")[0])) {
+                                                System.out.println("Правильно\n");
+                                                vegetableQuizCorrect = true;
+                                                break;
+                                            } else {
+                                                System.out.println("Ошибка. Попробуйте еще раз");
+                                            }
+                                        } else {
+                                            System.out.println("Некорректный ввод. Введите число от 1 до " + VegetablesOptions.size());
+                                        }
+                                    } else {
+                                        System.out.println("Некорректный ввод. Введите число от 1 до " + VegetablesOptions.size());
+                                        scanner.next();
+                                    }
                                 }
                             }
                             break;
@@ -223,7 +252,9 @@ public class Main {
                                 if (userInput.equalsIgnoreCase(koreanWord)) {
                                     System.out.println("Правильно");
                                 } else {
-                                    System.out.println("Ошибка. Правильный ответ: " + koreanWord);
+                                    System.out.println("Неправильно. Попробуйте еще раз");
+                                    // System.out.println("Ошибка. Правильный ответ: " + koreanWord);
+                                    i--;
                                 }
                             }
                             break;
@@ -247,7 +278,9 @@ public class Main {
                                 if (userInput.equalsIgnoreCase(koreanWord)) {
                                     System.out.println("Правильно");
                                 } else {
-                                    System.out.println("Ошибка. Правильный ответ: " + koreanWord);
+                                    System.out.println("Неправильно. Попробуйте еще раз");
+                                    // System.out.println("Ошибка. Правильный ответ: " + koreanWord);
+                                    i--;
                                 }
                             }
                             break;
